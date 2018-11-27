@@ -29,6 +29,7 @@
         <module>product</module>
         <module>user</module>
         <module>zuul</module>
+        <module>configure_server</module>
     </modules>
 
     <dependencies>
