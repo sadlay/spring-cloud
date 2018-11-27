@@ -6,7 +6,7 @@
     <groupId>com.lay</groupId>
     <artifactId>spring_cloud</artifactId>
     <version>1.0</version>
-    <packaging>jar</packaging>
+    <packaging>pom</packaging>
 
     <name>spring_cloud</name>
     <description>Demo project for Spring Boot</description>
