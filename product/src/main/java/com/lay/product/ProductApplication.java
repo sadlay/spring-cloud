@@ -2,8 +2,10 @@ package com.lay.product;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
+import org.springframework.cloud.netflix.hystrix.EnableHystrix;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
@@ -12,6 +14,7 @@ import org.springframework.web.client.RestTemplate;
 //启用发现服务注解，新版本已经不需要再使用了
 //@EnableDiscoveryClient
 @EnableFeignClients(basePackages = "com.lay.product")
+@EnableHystrix
 public class ProductApplication {
 
     public static void main(String[] args) {
