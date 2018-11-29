@@ -2,6 +2,7 @@ package com.lay.product.service;
 
 import com.lay.product.pojo.UserPo;
 import com.lay.product.service.impl.UserServiceHystirx;
+import com.lay.util.wrapperUtil.Wrapper;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,4 +20,6 @@ public interface UserService {
     @GetMapping("/user/{id}")
     public UserPo getUser(@PathVariable("id") Long id);
 
+    @GetMapping("/wrapper")
+    Wrapper<String> testWrapper();
 }

@@ -2,6 +2,7 @@ package com.lay.product.controller;
 
 import com.lay.product.pojo.UserPo;
 import com.lay.product.service.UserService;
+import com.lay.util.wrapperUtil.Wrapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -36,10 +37,16 @@ public class ProductController {
             //这里使用USER这个服务ID，代表用户维服务系统
             //该ID通过属性spring.application.name来指定
             //user = restTemplate.getForObject("http://USER/user/"+(i+1), UserPo.class);
-            Long id= Long.valueOf((i+1));
-            user=userService.getUser(id);
+            Long id = Long.valueOf((i + 1));
+            user = userService.getUser(id);
             list.add(user);
         }
         return list;
+    }
+
+    @GetMapping("/wrapper")
+    public Wrapper<String> testWrapper() {
+        Wrapper<String> stringWrapper = userService.testWrapper();
+        return stringWrapper;
     }
 }

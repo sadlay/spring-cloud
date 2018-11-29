@@ -1,6 +1,8 @@
 package com.lay.user.controller;
 
 import com.lay.user.pojo.UserPo;
+import com.lay.util.wrapperUtil.WrapMapper;
+import com.lay.util.wrapperUtil.Wrapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,5 +38,10 @@ public class UserController {
         userPo.setUserName("user_name_"+id);
         userPo.setNote("note_"+id);
         return userPo;
+    }
+
+    @GetMapping("/wrapper")
+    public Wrapper<String> testWrapper(){
+        return WrapMapper.ok("测试包装类wrapper");
     }
 }
