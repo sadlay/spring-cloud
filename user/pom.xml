@@ -34,6 +34,8 @@
             <groupId>com.lay</groupId>
             <artifactId>util</artifactId>
             <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>D:\Idea project\spring-cloud\util\target\util-1.0.jar</systemPath>
         </dependency>
     </dependencies>
 
