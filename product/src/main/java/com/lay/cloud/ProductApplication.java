@@ -11,7 +11,7 @@ import org.springframework.web.client.RestTemplate;
 @SpringBootApplication
 //启用发现服务注解，新版本已经不需要再使用了
 //@EnableDiscoveryClient
-@EnableFeignClients(basePackages = "com.lay.product")
+@EnableFeignClients
 @EnableHystrix
 public class ProductApplication {
 

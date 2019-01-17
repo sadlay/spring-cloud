@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.http.HttpSession;
+
 /**
  * @Description:
  * @Author: lay
@@ -34,7 +36,9 @@ public class UserController {
 
     //获取用户信息
     @GetMapping("/user/{id}")
-    public UserPo getUserPo(@PathVariable("id") Long id) {
+    public UserPo getUserPo(@PathVariable("id") Long id, HttpSession session) {
+        log.warn("=============User sessionId=================:{}",session.getId());
+        log.warn("lay :{}",session.getAttribute("lay"));
         ServiceInstance service = discoveryClient.getInstances("USER").get(0);
         log.info("【" + service.getServiceId() + "】" + service.getHost() + ": " + service.getPort());
         UserPo userPo = new UserPo();

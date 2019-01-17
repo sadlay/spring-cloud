@@ -43,6 +43,12 @@
             <groupId>com.lay.cloud</groupId>
             <artifactId>util</artifactId>
         </dependency>
+        <!-- 重试机制 ，必须配，否则重试不生效 -->
+        <dependency>
+            <groupId>org.springframework.retry</groupId>
+            <artifactId>spring-retry</artifactId>
+        </dependency>
+
     </dependencies>
 
     <build>

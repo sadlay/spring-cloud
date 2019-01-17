@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.PathVariable;
  * @Date: Created in 17:35 2018/11/26
  * @Modified By:IntelliJ IDEA
  */
-@FeignClient(value = "user",fallback = UserServiceHystirx.class)
+@FeignClient(value = "user",fallback = UserServiceHystirx.class )
 public interface UserService {
 
     @GetMapping("/user/{id}")
